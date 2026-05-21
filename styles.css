@@ -125,6 +125,24 @@ textarea {
   filter: drop-shadow(0 10px 18px rgba(217, 79, 123, 0.16));
 }
 
+.umbrella-fill {
+  fill: rgba(255, 230, 239, 0.92);
+  stroke: none;
+}
+
+.rain-drop {
+  fill: #8fc8ff;
+  opacity: 0.88;
+}
+
+.small-drop {
+  opacity: 0.74;
+}
+
+.tiny-drop {
+  opacity: 0.58;
+}
+
 .umbrella-canopy,
 .umbrella-rim,
 .th-mark,
@@ -154,7 +172,7 @@ textarea {
 
 .th-mark {
   stroke: var(--pink-deep);
-  stroke-width: 6.2;
+  stroke-width: 5.6;
 }
 
 .main-t {
