@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>T & H 恋爱记录</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bubble-layer" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <header class="app-header">
+      <a class="brand" href="#overview" data-panel-link="overview" aria-label="T and H love record home">
+        <svg class="brand-mark" viewBox="0 0 112 112" role="img" aria-label="T H 伞下长椅图标">
+          <path class="umbrella-canopy" d="M16 53c7-23 25-37 50-39 19 4 33 18 38 39" />
+          <path class="umbrella-rim" d="M16 53c25 5 57 5 88 0" />
+          <path class="th-mark main-t" d="M28 55h43M50 55v45" />
+          <path class="th-mark main-h" d="M50 80h33c5 0 8 3 8 8v11" />
+          <path class="bench" d="M60 80h34" />
+          <circle class="person-head person-tall" cx="65" cy="63" r="4.4" />
+          <circle class="person-head person-small" cx="76" cy="68" r="3.8" />
+          <path class="person-line" d="M65 68v12M76 72c-4 1-7 4-9 8M67 72c3 5 7 6 10 2M63 80v10M68 80v10M75 80v10M80 80v10" />
+        </svg>
+        <span>
+          <strong>T & H</strong>
+          <small>恋爱记录</small>
+        </span>
+      </a>
+
+      <nav class="top-nav" aria-label="模块导航">
+        <a href="#overview" data-panel-link="overview">概览</a>
+        <a href="#records" data-panel-link="records">记录</a>
+        <a href="#footprints" data-panel-link="footprints">足迹</a>
+        <a href="#media" data-panel-link="media">书影音</a>
+        <a href="#plans" data-panel-link="plans">计划</a>
+        <a href="#wishes" data-panel-link="wishes">愿望</a>
+        <a href="#timeline" data-panel-link="timeline">时间线</a>
+        <a href="#gallery" data-panel-link="gallery">相册</a>
+        <a href="#letter" data-panel-link="letter">小纸条</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="feature-panel is-active" data-panel-view="overview" aria-label="概览">
+        <div class="overview-stack">
+          <section class="overview-hero">
+            <div class="intro-card">
+              <p class="eyebrow">Love log for two</p>
+              <h1>T 和 H 的粉白色恋爱小站</h1>
+              <p>把相爱天数、日常记录、一起去过的城市、看过的书影音和未来愿望都好好收起来。</p>
+              <div class="hero-actions">
+                <button class="button primary" type="button" data-panel-link="records">写一条记录</button>
+                <button class="button ghost" type="button" data-panel-link="footprints">点亮城市</button>
+              </div>
+            </div>
+
+            <section class="love-panel" aria-label="恋爱计时">
+              <div class="calendar-top">
+                <span>T & H</span>
+                <button class="icon-button" id="editStart" type="button" aria-label="修改开始日期" title="修改开始日期">✎</button>
+              </div>
+              <div class="calendar-body">
+                <span>已相爱</span>
+                <strong id="daysTogether">0</strong>
+                <em>天</em>
+              </div>
+              <label class="date-field">
+                <span>开始日期</span>
+                <input id="startDate" type="date" />
+              </label>
+            </section>
+          </section>
+
+          <section class="dashboard" aria-label="恋爱概览">
+            <article class="metric">
+              <span class="metric-icon">♡</span>
+              <div>
+                <strong id="recordCount">0</strong>
+                <span>条记录</span>
+                <p>把日常的心动片段慢慢攒起来。</p>
+              </div>
+            </article>
+            <article class="metric">
+              <span class="metric-icon">☆</span>
+              <div>
+                <strong id="favoriteCount">0</strong>
+                <span>个高光</span>
+                <p>值得反复回看的瞬间会被标出来。</p>
+              </div>
+            </article>
+            <article class="metric">
+              <span class="metric-icon">♪</span>
+              <div>
+                <strong id="latestMood">甜</strong>
+                <span>最近心情</span>
+                <p>今天的心情，也有一个温柔坐标。</p>
+              </div>
+            </article>
+          </section>
+
+          <section class="overview-links" aria-label="常用入口">
+            <button class="overview-link" type="button" data-panel-link="footprints">
+              <span>城市足迹</span>
+              <strong>点亮一起去过的地方</strong>
+            </button>
+            <button class="overview-link" type="button" data-panel-link="media">
+              <span>书影音</span>
+              <strong>收好一起看过的作品</strong>
+            </button>
+            <button class="overview-link" type="button" data-panel-link="plans">
+              <span>计划</span>
+              <strong>安排下一件小事</strong>
+            </button>
+            <button class="overview-link" type="button" data-panel-link="letter">
+              <span>小纸条</span>
+              <strong>换一句今日温柔</strong>
+            </button>
+          </section>
+        </div>
+      </section>
+
+      <section class="feature-panel" data-panel-view="records" hidden aria-label="记录">
+        <div class="module-stack">
+          <div class="module-head">
+            <div>
+              <p class="eyebrow">Memory</p>
+              <h2>记录</h2>
+            </div>
+          </div>
+          <form class="editor-form" id="recordForm">
+            <input type="hidden" id="recordId" />
+            <label><span>标题</span><input id="recordTitle" type="text" placeholder="第一次一起看海" maxlength="28" required /></label>
+            <div class="form-row">
+              <label><span>日期</span><input id="recordDate" type="date" required /></label>
+              <label>
+                <span>心情</span>
+                <select id="recordMood">
+                  <option value="甜">甜</option>
+                  <option value="想念">想念</option>
+                  <option value="开心">开心</option>
+                  <option value="安心">安心</option>
+                </select>
+              </label>
+            </div>
+            <label><span>内容</span><textarea id="recordNote" placeholder="写下今天想记住的小事。" maxlength="180" required></textarea></label>
+            <label class="check-line"><input id="recordFavorite" type="checkbox" /><span>标记为高光时刻</span></label>
+            <div class="form-actions">
+              <button class="button primary" type="submit">保存</button>
+              <button class="button ghost" id="cancelRecordEdit" type="button">取消编辑</button>
+            </div>
+          </form>
+          <div class="vertical-list" id="recordsList"></div>
+        </div>
+      </section>
+
+      <section class="feature-panel" data-panel-view="footprints" hidden aria-label="足迹">
+        <div class="module-stack">
+          <div class="module-head"><div><p class="eyebrow">Cities</p><h2>城市足迹</h2></div></div>
+          <section class="china-map-card" aria-label="中国城市足迹地图">
+            <svg class="china-map" viewBox="0 0 640 430" role="img" aria-label="中国地图">
+              <path class="china-shape" d="M112 178 145 137 201 117 249 81 304 94 341 76 392 104 449 99 489 135 530 153 548 199 520 246 538 296 491 324 438 319 397 355 343 342 303 368 249 346 208 360 169 326 128 308 111 259 83 226Z" />
+              <path class="china-line" d="M234 132 282 157 335 148 391 172 439 209 490 220M178 216 232 224 287 250 344 239 404 263 466 284M238 309 296 294 352 306 405 292" />
+              <g id="mapPoints"></g>
+            </svg>
+            <div class="map-caption">
+              <strong id="litCityCount">0</strong>
+              <span>座城市已点亮</span>
+            </div>
+          </section>
+          <form class="editor-form" id="footprintForm">
+            <input type="hidden" id="footprintId" />
+            <div class="form-row">
+              <label><span>时间</span><input id="footprintDate" type="text" placeholder="2025.05" required /></label>
+              <label><span>城市</span><input id="footprintCity" type="text" placeholder="上海" required /></label>
+            </div>
+            <label><span>经历纸条</span><textarea id="footprintNote" placeholder="在这个城市一起经历了什么？" required></textarea></label>
+            <div class="form-actions"><button class="button primary" type="submit">保存</button><button class="button ghost" id="cancelFootprintEdit" type="button">取消编辑</button></div>
+          </form>
+          <div class="vertical-list" id="footprintList"></div>
+        </div>
+      </section>
+
+      <section class="feature-panel" data-panel-view="media" hidden aria-label="书影音">
+        <div class="module-stack">
+          <div class="module-head"><div><p class="eyebrow">Media</p><h2>书影音</h2></div></div>
+          <form class="editor-form" id="mediaForm">
+            <input type="hidden" id="mediaId" />
+            <div class="form-row">
+              <label><span>类型</span><input id="mediaType" type="text" placeholder="电影 / 书 / 音乐" required /></label>
+              <label><span>名称</span><input id="mediaTitle" type="text" placeholder="怦然心动" required /></label>
+            </div>
+            <label><span>想法</span><textarea id="mediaNote" placeholder="为什么想一起看 / 听 / 读？" required></textarea></label>
+            <div class="form-actions"><button class="button primary" type="submit">保存</button><button class="button ghost" id="cancelMediaEdit" type="button">取消编辑</button></div>
+          </form>
+          <div class="vertical-list" id="mediaList"></div>
+        </div>
+      </section>
+
+      <section class="feature-panel" data-panel-view="plans" hidden aria-label="计划">
+        <div class="module-stack">
+          <div class="module-head"><div><p class="eyebrow">Plans</p><h2>计划</h2></div></div>
+          <form class="editor-form" id="planForm">
+            <input type="hidden" id="planId" />
+            <div class="form-row">
+              <label><span>计划</span><input id="planTitle" type="text" placeholder="一起拍春天照片" required /></label>
+              <label><span>时间</span><input id="planDate" type="text" placeholder="这个周末" /></label>
+            </div>
+            <label><span>备注</span><textarea id="planNote" placeholder="准备什么？想怎么完成？"></textarea></label>
+            <label class="check-line"><input id="planDone" type="checkbox" /><span>已经完成</span></label>
+            <div class="form-actions"><button class="button primary" type="submit">保存</button><button class="button ghost" id="cancelPlanEdit" type="button">取消编辑</button></div>
+          </form>
+          <div class="vertical-list" id="planList"></div>
+        </div>
+      </section>
+
+      <section class="feature-panel" data-panel-view="wishes" hidden aria-label="愿望">
+        <div class="module-stack">
+          <div class="module-head"><div><p class="eyebrow">Wishes</p><h2>愿望</h2></div></div>
+          <form class="editor-form" id="wishForm">
+            <input type="hidden" id="wishId" />
+            <label><span>愿望</span><input id="wishTitle" type="text" placeholder="一起看一场海边日落" required /></label>
+            <label><span>补充</span><textarea id="wishNote" placeholder="想象一下实现它的样子。"></textarea></label>
+            <div class="form-actions"><button class="button primary" type="submit">保存</button><button class="button ghost" id="cancelWishEdit" type="button">取消编辑</button></div>
+          </form>
+          <div class="vertical-list" id="wishList"></div>
+        </div>
+      </section>
+
+      <section class="feature-panel" data-panel-view="timeline" hidden aria-label="时间线">
+        <div class="module-stack">
+          <div class="module-head"><div><p class="eyebrow">Timeline</p><h2>时间线</h2></div></div>
+          <div class="vertical-list" id="timelineList"></div>
+        </div>
+      </section>
+
+      <section class="feature-panel" data-panel-view="gallery" hidden aria-label="相册">
+        <div class="module-stack">
+          <div class="module-head"><div><p class="eyebrow">Album</p><h2>相册</h2></div></div>
+          <div class="vertical-list" id="galleryList"></div>
+        </div>
+      </section>
+
+      <section class="feature-panel" data-panel-view="letter" hidden aria-label="小纸条">
+        <div class="module-stack">
+          <div class="module-head"><div><p class="eyebrow">Tiny Letter</p><h2>小纸条</h2></div></div>
+          <form class="editor-form" id="letterForm">
+            <input type="hidden" id="letterId" />
+            <label><span>一句话</span><textarea id="letterText" placeholder="今天也要把温柔留给彼此一点点。" required></textarea></label>
+            <div class="form-actions"><button class="button primary" type="submit">保存</button><button class="button ghost" id="cancelLetterEdit" type="button">取消编辑</button></div>
+          </form>
+          <article class="letter-box">
+            <h3>今日小纸条</h3>
+            <p id="dailyLetter">今天也要把温柔留给彼此一点点。</p>
+            <button class="button ghost" id="shuffleLetter" type="button">换一句</button>
+          </article>
+          <div class="vertical-list" id="letterList"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
