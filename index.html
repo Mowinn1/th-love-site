@@ -170,14 +170,17 @@
           <div class="module-head"><div><p class="eyebrow">Cities</p><h2>城市足迹</h2></div></div>
           <section class="china-map-card" aria-label="中国城市足迹地图">
             <svg class="china-map" viewBox="0 0 640 430" role="img" aria-label="中国地图">
-              <path class="china-shape" d="M112 178 145 137 201 117 249 81 304 94 341 76 392 104 449 99 489 135 530 153 548 199 520 246 538 296 491 324 438 319 397 355 343 342 303 368 249 346 208 360 169 326 128 308 111 259 83 226Z" />
-              <path class="china-line" d="M234 132 282 157 335 148 391 172 439 209 490 220M178 216 232 224 287 250 344 239 404 263 466 284M238 309 296 294 352 306 405 292" />
+              <path class="china-shape" d="M89 152 122 128 162 119 193 96 230 99 259 76 297 88 325 72 362 91 402 94 438 82 478 104 514 122 548 156 572 198 552 234 571 276 538 311 492 325 451 352 407 343 365 366 319 348 281 370 239 350 198 360 160 334 132 295 100 278 82 238 56 205Z" />
+              <path class="china-island" d="M501 356c18 10 26 27 20 48-17-8-27-24-20-48Z" />
+              <path class="china-island" d="M544 316c11 7 15 17 11 29-10-5-16-17-11-29Z" />
+              <path class="china-line" d="M187 141 229 166 280 159 331 177 386 178 438 207 498 220M137 221 198 226 259 251 319 244 384 265 458 287M207 313 266 296 323 307 383 292M296 91 322 136 319 181M402 94 391 139 386 178" />
               <g id="mapPoints"></g>
             </svg>
             <div class="map-caption">
               <strong id="litCityCount">0</strong>
               <span>座城市已点亮</span>
             </div>
+            <p class="map-hint" id="mapHint"></p>
           </section>
           <form class="editor-form" id="footprintForm">
             <input type="hidden" id="footprintId" />
